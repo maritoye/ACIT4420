@@ -1,3 +1,8 @@
+"""
+Marit Øye Gjersdal
+s348588
+"""
+
 f = open("python.txt")
 
 characters = ["\n", ".", ",", "(", ")", '"', "'s", "'"]

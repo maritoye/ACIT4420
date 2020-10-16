@@ -1,21 +1,17 @@
-intro = """
-s - Store program
-l - List daily program
-x - Exit
 """
-days = ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"]
-modes = ["s", "l", "x"]
-program = []
+Marit Øye Gjersdal
+s348588
+"""
 
-for i in range(len(days)):
-	list = []
-	for j in range(25):
-		list.append(" ")
-	list[0] = days[i]
-	program.append(list)
+intro = "s - Store program \nl - List daily program \nx - Exit"
+days = ("monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday")
+modes = ["s", "l", "x"]
+
+program = [[" "] * 24 for i in range(len(days))]
+
+print(intro)
 
 while True:
-	print(intro)
 	mode = input(str("Choose from the list: "))
 
 	while mode not in modes:
@@ -29,12 +25,12 @@ while True:
 		time = int(input("What time? "))
 		event = input(str("What is the program? "))
 		
-		program[days.index(day)].insert(time+1, event)
+		program[days.index(day)].insert(time, event)
 		print("Program has been stored")
 
 	if mode == "l":
 		day = str(input("Which day? "))
 		hour = 0
-		for i in range(1 ,25):
+		for i in range(0 ,24):
 			print(str(hour) + ":00 " + program[days.index(day)][i])
 			hour+=1
